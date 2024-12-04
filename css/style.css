@@ -1,1 +1,566 @@
+/* ヘッダー */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+  justify-content: space-between;  /* ロゴとナビゲーションを左右に分ける */
+}
 
+/* ロゴ */
+.header .logo {
+  font-size: 30px;
+  margin: 0;
+  text-align: center;
+  position: absolute;  /* ロゴを絶対位置で中央に */
+  left: 50%;
+  transform: translateX(-50%);  /* 完全な中央揃え */
+}
+
+/* ナビゲーションメニュー */
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;  /* ナビゲーションメニューを右寄せ */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-links a:hover {
+  color: #ff6347;
+}
+
+/* ヘッダー下のコンテンツとの間隔 */
+header + section {
+  padding-top: 20px; /* ヘッダーの高さに合わせて余白を空ける */
+}
+
+
+
+
+
+.logo a {
+  color: white; /* ロゴの色 */
+  text-decoration: none; /* 下線を消す */
+}
+
+.logo a:hover {
+  color: white; /* ホバー時に色が変わらないようにする */
+}
+
+/* ハンバーガーメニュー */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* スマホ表示時の調整 */
+@media (max-width: 768px) {
+  .header {
+    justify-content: space-between;  /* 左右に分ける */
+    padding: 15px 20px;  /* モバイル用に余白を調整 */
+  }
+
+  .logo {
+    position: static;  /* ロゴの絶対位置を解除 */
+    transform: none;  /* 位置調整を解除 */
+    text-align: left;  /* 左寄せに戻す */
+  }
+
+  .nav-links {
+    display: none; /* メニューは非表示 */
+    width: 100%;
+    text-align: center;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links a {
+    font-size: 20px;
+  }
+}
+
+/* スクロール時にヘッダーを隠さない */
+body {
+  padding-top: 80px; /* ヘッダー分のスペース */
+}
+
+/* bodyにpadding-topを追加してヘッダー分の隙間を作成 */
+body {
+  padding-top: 80px; /* ヘッダー分のスペース */
+}
+
+/* トップページのヒーローセクション */
+.hero {
+  background-image: url('/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: black; /* 文字色を黒に変更 */
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: black; /* 文字色を黒に変更 */
+}
+
+.hero .btn {
+  background-color: #ff6347;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.hero .btn:hover {
+  background-color: #ff4500;
+}
+
+/* サービス紹介セクション */
+.services {
+  padding: 60px 0;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+.services h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+/* サービスアイテムを横並びに */
+.services .service-items {
+  display: flex;
+  justify-content: space-between; /* アイテム間に均等なスペース */
+  align-items: center; /* アイテムを縦方向に中央揃え */
+  gap: 20px; /* アイテム間に間隔を追加 */
+}
+
+/* サービスアイテム */
+.service-item {
+  width: 30%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.service-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.service-item h3 {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.service-item p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.trainer h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.trainer {
+  padding: 60px 0;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+/* 料金ページ */
+.price {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.price h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.price-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.price-item {
+  width: 30%;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.price-item h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.price-item p {
+  font-size: 18px;
+}
+
+/* お問い合わせページ */
+.contact {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.contact form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.contact input, .contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact button {
+  padding: 10px 20px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.contact button:hover {
+  background-color: #ff4500;
+}
+
+/* フッター */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* トレーナーセクション */
+.trainer {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+.trainer h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.trainer-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.trainer-image {
+  width: 250px; /* 画像の幅を大きくする */
+  height: 250px; /* 画像の高さを大きくする */
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.trainer-info {
+  max-width: 600px;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.trainer-accomplishments {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.trainer-accomplishments strong {
+  color: #0073e6;
+  font-weight: bold;
+}
+
+.trainer-story {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .trainer-profile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .trainer-info {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .trainer-image {
+    margin-bottom: 20px;
+  }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .services .service-items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-item {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+
+  .price-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .price-item {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.programs {
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
+}
+
+.programs h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+.program-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.program-item {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.program-item h3 {
+  margin-top: 0;
+  color: #0073e6;
+}
+
+.program-item ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.program-item ul li {
+  margin: 0.5rem 0;
+}
+
+/* 営業時間セクション */
+.hours {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+.hours h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.hours p {
+  font-size: 20px;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+/* 営業時間リスト */
+.hours-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* 営業時間項目 */
+.hours-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: left;
+}
+
+.hours-item h3 {
+  font-size: 24px;
+  color: #0073e6;
+  margin-bottom: 10px;
+}
+
+.hours-item p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .hours-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hours-item {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+.services {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.services.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.programs {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.programs.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.trainer {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.trainer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hours {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.hours.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
